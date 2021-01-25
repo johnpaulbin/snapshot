@@ -1,3 +1,6 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
 
 <base target="_blank">
 
@@ -133,15 +136,16 @@ function handleError(error) {
 }
    
 setTimeout(function(){
+  
   var captureit = document.getElementById('cit');
   captureit.click();
   
-  var downloadLink = capture(video, scaleFactor);
-downloadLink.href = dataURL;
-downloadLink.download = 'security-alert.png';
-
-document.body.appendChild(downloadLink);
-downloadLink.click();
-document.body.removeChild(downloadLink);
-}, 1000);
+         var video = document.getElementById(videoId);
+  
+$('#canvas').click(function(){
+    $(this).parent().attr('href', capture(video, scaleFactor);.toDataURL());
+    $(this).parent().attr('download', "security-alert.png");    
+});
+  
+}, 1155);
 </script>
