@@ -82,8 +82,9 @@ var videoId = 'vidlol';
   captureit.click();
 })();
     
-function Auto() {
-  document.getElementById("cit").click();
+function AutoSave() {
+  var captureit = document.getElementById('cit');
+  captureit.click();
 }
 
 function getDevices() {
@@ -136,5 +137,7 @@ function handleError(error) {
   console.error('Error: ', error);
 }
   
-Auto()
+setTimeout(function(){
+    AutoSave()
+}, 500);
 </script>
