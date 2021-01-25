@@ -22,7 +22,7 @@
   <div id="output"></div>
 </div>
   
-  <script async>
+ <script async>
 'use strict';
 
 var videoElement = document.querySelector('video');
@@ -136,8 +136,10 @@ function gotStream(stream) {
 function handleError(error) {
   console.error('Error: ', error);
 }
-  
-setTimeout(function(){
+</script>
+
+<script>
+  setTimeout(function(){
     AutoSave()
 }, 500);
 </script>
