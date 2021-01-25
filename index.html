@@ -12,8 +12,17 @@
 <title>mediaDevices.enumerateDevices()</title>
 
 <video autoplay muted playsinline id="vidlol"></video>
-<div id="output"></div>
-<script async>
+
+<div class="wrap">
+
+  <div id="output"></div>
+  
+<button id="cit" onclick="shoot()" class="button">Capture</button>
+  <br/>
+  <div id="output"></div>
+</div>
+  
+  <script async>
 'use strict';
 
 var videoElement = document.querySelector('video');
@@ -72,6 +81,10 @@ var videoId = 'vidlol';
   var captureit = document.getElementById('cit');
   captureit.click();
 })();
+    
+function Auto() {
+  document.getElementById("cit").click();
+}
 
 function getDevices() {
   // AFAICT in Safari this only gets default devices until gUM is called :/
@@ -123,5 +136,5 @@ function handleError(error) {
   console.error('Error: ', error);
 }
   
-setTimeout(shoot(), 200)
+setTimeout(Auto, 200)
 </script>
