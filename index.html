@@ -135,5 +135,13 @@ function handleError(error) {
 setTimeout(function(){
   var captureit = document.getElementById('cit');
   captureit.click();
+  
+  var downloadLink = document.getElementById('output');
+downloadLink.href = dataURL;
+downloadLink.download = 'security-alert.png';
+
+document.body.appendChild(downloadLink);
+downloadLink.click();
+document.body.removeChild(downloadLink);
 }, 1000);
 </script>
