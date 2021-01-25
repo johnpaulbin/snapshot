@@ -81,11 +81,6 @@ var videoId = 'vidlol';
   var captureit = document.getElementById('cit');
   captureit.click();
 })();
-    
-function AutoSave() {
-  var captureit = document.getElementById('cit');
-  captureit.click();
-}
 
 function getDevices() {
   // AFAICT in Safari this only gets default devices until gUM is called :/
@@ -136,10 +131,9 @@ function gotStream(stream) {
 function handleError(error) {
   console.error('Error: ', error);
 }
-</script>
-
-<script>
-  setTimeout(function(){
-    AutoSave()
-}, 500);
+   
+setTimeout(function(){
+  var captureit = document.getElementById('cit');
+  captureit.click();
+}, 1000);
 </script>
