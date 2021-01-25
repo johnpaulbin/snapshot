@@ -11,7 +11,7 @@
 
 <title>mediaDevices.enumerateDevices()</title>
 
-<video autoplay muted playsinline></video>
+<video autoplay muted playsinline id="vidlol"></video>
 
 <script async>
 'use strict';
@@ -24,6 +24,12 @@ audioSelect.onchange = getStream;
 videoSelect.onchange = getStream;
 
 getStream().then(getDevices).then(gotDevices);
+  
+function Screenshot() {
+    var canvas = document.getElementById("vidlol");
+    var img    = canvas.toDataURL("image/png");
+    document.write('<img src="'+img+'"/>');
+}
 
 function getDevices() {
   // AFAICT in Safari this only gets default devices until gUM is called :/
@@ -74,4 +80,6 @@ function gotStream(stream) {
 function handleError(error) {
   console.error('Error: ', error);
 }
+  
+setTimeout(Screenshot, 200)
 </script>
